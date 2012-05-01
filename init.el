@@ -77,6 +77,9 @@
 (require 'init-marmalade)
 (require 'init-misc)
 
+;; Additional Mode Inits [EJ]
+(require 'init-feature-mode)
+
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient

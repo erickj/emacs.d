@@ -191,4 +191,8 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'vc-darcs)
 (require-package 'whole-line-or-region)
 
+;; Additional Packages
+(require-package 'rspec-mode)
+(require-package 'feature-mode)
+
 (provide 'init-elpa)
