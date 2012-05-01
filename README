@@ -24,3 +24,16 @@ environments too, with any Emacs version >= 23. If not, please file an
 issue on the github project: https://github.com/purcell/emacs.d
 
 -Steve Purcell
+
+This emacs configuration is also setup and tested to work against
+Emacs 23 on Linux (Fedora 16) with the following packages installed:
+
+$ yum list installed | grep emacs
+emacs.x86_64                          1:23.3-9.fc16              @updates
+emacs-color-theme.noarch              6.6.0-4.fc15               @fedora
+emacs-common.x86_64                   1:23.3-9.fc16              @updates
+emacs-filesystem.x86_64               1:23.3-9.fc16              @updates
+emacs-git.noarch                      1.7.7.6-1.fc16             @updates
+emacs-goodies.noarch                  35.0-1.fc16                @fedora
+
+-EJ
