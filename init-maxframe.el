@@ -26,8 +26,9 @@
   (with-selected-frame frame
     (if window-system (maximize-frame))))
 
-(add-hook 'after-make-frame-functions 'maybe-maximize-frame)
-(add-hook 'after-init-hook 'maybe-maximize-frame)
+(unless *skip-maximize*
+  (add-hook 'after-make-frame-functions 'maybe-maximize-frame)
+  (add-hook 'after-init-hook 'maybe-maximize-frame))
 
 (defun within-p (a b delta)
   (<= (abs (- b a)) delta))

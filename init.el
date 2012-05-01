@@ -6,6 +6,8 @@
 ;;----------------------------------------------------------------------------
 (setq *spell-check-support-enabled* t)
 (setq *macbook-pro-support-enabled* nil)
+(setq *skip-maximize* t)
+
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
 (setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
@@ -77,8 +79,9 @@
 (require 'init-marmalade)
 (require 'init-misc)
 
-;; Additional Mode Inits [EJ]
+;; Additional Inits [EJ]
 (require 'init-feature-mode)
+(require 'init-px-frames)
 
 
 ;;----------------------------------------------------------------------------
