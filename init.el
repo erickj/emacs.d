@@ -4,11 +4,14 @@
 ;;----------------------------------------------------------------------------
 ;; Which functionality to enable (use t or nil for true and false)
 ;;----------------------------------------------------------------------------
-(setq *spell-check-support-enabled* nil)
-(setq *macbook-pro-support-enabled* t)
+(setq *spell-check-support-enabled* t)
+(setq *macbook-pro-support-enabled* nil)
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
 (setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
+(setq *is-linux* (eq system-type 'gnu/linux))
+(setq *is-x* (and *is-linux* (eq window-system 'x)))
+(setq *is-gt-23* (> emacs-major-version 23))
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
@@ -100,6 +103,7 @@
 ;; Locales (setting them earlier in this file doesn't work in X)
 ;;----------------------------------------------------------------------------
 (require 'init-locales)
+
 
 
 ;; Local Variables:
