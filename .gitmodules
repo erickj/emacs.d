@@ -16,3 +16,6 @@
 [submodule "site-lisp/flymake-python-pyflakes"]
 	path = site-lisp/flymake-python-pyflakes
 	url = https://github.com/purcell/flymake-python-pyflakes.git
+[submodule "site-lisp/color-theme-solarized"]
+	path = site-lisp/color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized.git
