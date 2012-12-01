@@ -1,9 +1,7 @@
 ;;------------------------------------------------------------------------------
 ;; Old-style color theming support (via color-theme.el)
 ;;------------------------------------------------------------------------------
-(require 'color-theme-solarized)
-
-(defcustom window-system-color-theme 'color-theme-solarized-dark
+(defcustom window-system-color-theme 'color-theme-sanityinc-solarized-dark
   "Color theme to use in window-system frames.
 If Emacs' native theme support is available, this setting is
 ignored: use `custom-enabled-themes' instead."
@@ -15,14 +13,10 @@ If Emacs' native theme support is available, this setting is
 ignored: use `custom-enabled-themes' instead."
   :type 'symbol)
 
-;; Disable custom-enabled-themes in Emacs <= 23
-(if (not (and *is-gt-23* (boundp 'custom-enabled-themes)))
-    (makunbound 'custom-enabled-themes))
-
 (unless (boundp 'custom-enabled-themes)
   (defun color-theme-terminal ()
-    (color-theme-solarized-dark)
-    )
+    (interactive)
+    (color-theme-sanityinc-solarized-dark))
 
   (defun apply-best-color-theme-for-frame-type (frame)
     (with-selected-frame frame
@@ -39,42 +33,42 @@ ignored: use `custom-enabled-themes' instead."
   (add-hook 'after-init-hook 'reapply-color-themes)
   (apply-best-color-theme-for-frame-type (selected-frame)))
 
+
 ;;------------------------------------------------------------------------------
 ;; New-style theme support, in which per-frame theming is not possible
 ;;------------------------------------------------------------------------------
 
-(if *is-gt-23*
-    (
-     ;; If you don't customize it, this is the theme you get.
-     (setq-default custom-enabled-themes '(sanityinc-solarized-light))
+;; If you don't customize it, this is the theme you get.
+(setq-default custom-enabled-themes '(sanityinc-solarized-light))
 
-     ;; Ensure that themes will be applied even if they have not been customized
-     (defun reapply-themes ()
-       "Forcibly load the themes listed in `custom-enabled-themes'."
-       (dolist (theme custom-enabled-themes)
-	 (unless (custom-theme-p theme)
-	   (load-theme theme)
-	   (message "Consider using 'M-x customize-themes' to save your preferred theme.")))
-       (custom-set-variables `(custom-enabled-themes ,custom-enabled-themes)))
+;; Ensure that themes will be applied even if they have not been customized
+(defun reapply-themes ()
+  "Forcibly load the themes listed in `custom-enabled-themes'."
+  (dolist (theme custom-enabled-themes)
+    (unless (custom-theme-p theme)
+      (load-theme theme)
+      (message "Consider using 'M-x customize-themes' to save your preferred theme.")))
+  (custom-set-variables `(custom-enabled-themes ,custom-enabled-themes)))
 
-     (add-hook 'after-init-hook 'reapply-themes)
+(add-hook 'after-init-hook 'reapply-themes)
 
 
-     ;;------------------------------------------------------------------------------
-     ;; Toggle between light and dark
-     ;;------------------------------------------------------------------------------
-     (defun light ()
-       "Activate a light color theme."
-       (interactive)
-       (if (boundp 'custom-enabled-themes)
-	   (custom-set-variables '(custom-enabled-themes '(sanityinc-solarized-light)))
-	 (color-theme-sanityinc-solarized-light)))
+;;------------------------------------------------------------------------------
+;; Toggle between light and dark
+;;------------------------------------------------------------------------------
+(defun light ()
+  "Activate a light color theme."
+  (interactive)
+  (if (boundp 'custom-enabled-themes)
+      (custom-set-variables '(custom-enabled-themes '(sanityinc-solarized-light)))
+    (color-theme-sanityinc-solarized-light)))
 
-     (defun dark ()
-       "Activate a dark color theme."
-       (interactive)
-       (if (boundp 'custom-enabled-themes)
-	   (custom-set-variables '(custom-enabled-themes '(sanityinc-solarized-dark)))
-	 (color-theme-sanityinc-solarized-dark)))))
+(defun dark ()
+  "Activate a dark color theme."
+  (interactive)
+  (if (boundp 'custom-enabled-themes)
+      (custom-set-variables '(custom-enabled-themes '(sanityinc-solarized-dark)))
+    (color-theme-sanityinc-solarized-dark)))
+
 
 (provide 'init-themes)

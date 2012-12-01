@@ -14,6 +14,8 @@
 (setq *is-linux* (eq system-type 'gnu/linux))
 (setq *is-x* (and *is-linux* (eq window-system 'x)))
 (setq *is-gt-23* (> emacs-major-version 23))
+(setq *is-gte-23* (>= emacs-major-version 23))
+(setq *is-gte-24* (>= emacs-major-version 24))
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
