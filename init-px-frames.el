@@ -6,15 +6,18 @@
 
 (defcustom px-default-frame-height 800
   "Default frame height in pixels."
-  :type 'integer)
+  :type 'integer
+  :group 'pxframes)
 
 (defcustom px-default-frame-width 640
   "Default frame width in pixels."
-  :type 'integer)
+  :type 'integer
+  :group 'pxframes)
 
 (defcustom px-increment 80
   "Amount by which to readjust pixel based positions and dimensions"
-  :type 'integer)
+  :type 'integer
+  :group 'pxframes)
 
 (require 'init-utils) ; for with-selected-frame
 
@@ -41,10 +44,10 @@
   (message (format "Detected display height: %dpx" (or *px-display-height* 0))))
 
 (defun frame-px-to-rows (px)
-  (/ px (frame-char-height)))
+  (floor (/ px (frame-char-height))))
 
 (defun frame-px-to-cols (px)
-  (/ px (frame-char-width)))
+  (floor (/ px (frame-char-width))))
 
 (defun set-frame-size-px (frame colpx rowpx)
   (set-frame-width-px frame colpx)
@@ -64,29 +67,30 @@
 (defun inc-frame-height-px (frame px)
   (set-frame-height-px frame (+ px (frame-pixel-height))))
 
+;; Ubuntu globally grabs C-s-<right/left/up/down> for window placement
 
 ;; Setup Ctrl-Super keybindings for frame resizing
-(global-set-key (kbd "C-s-<right>") '(lambda ()
-                                       (interactive)
-                                       (inc-frame-width-px (selected-frame) px-increment)))
-(global-set-key (kbd "C-s-<left>") '(lambda ()
-                                         (interactive)
-                                         (inc-frame-width-px (selected-frame) (- px-increment))))
-(global-set-key (kbd "C-s-<up>") '(lambda ()
-                                    (interactive)
-                                    (inc-frame-height-px (selected-frame) px-increment)))
-(global-set-key (kbd "C-s-<down>") '(lambda ()
-                                      (interactive)
-                                      (inc-frame-height-px (selected-frame) (- px-increment))))
+;; (global-set-key (kbd "C-s-<right>") '(lambda ()
+;;                                        (interactive)
+;;                                        (inc-frame-width-px (selected-frame) px-increment)))
+;; (global-set-key (kbd "C-s-<left>") '(lambda ()
+;;                                          (interactive)
+;;                                          (inc-frame-width-px (selected-frame) (- px-increment))))
+;; (global-set-key (kbd "C-s-<up>") '(lambda ()
+;;                                     (interactive)
+;;                                     (inc-frame-height-px (selected-frame) px-increment)))
+;; (global-set-key (kbd "C-s-<down>") '(lambda ()
+;;                                       (interactive)
+;;                                       (inc-frame-height-px (selected-frame) (- px-increment))))
 (global-set-key (kbd "C-s-1") '(lambda ()
                                  (interactive)
                                  (set-frame-size-px (selected-frame)
-                                                    *px-display-width*
+                                                    (* *px-display-width* 0.3)
                                                     *px-display-height*)))
 (global-set-key (kbd "C-s-2") '(lambda ()
                                  (interactive)
                                  (set-frame-size-px (selected-frame)
-                                                    (/ *px-display-width* 2)
+                                                    (* *px-display-width* 0.6)
                                                     *px-display-height*)))
 
 (provide 'init-px-frames)
