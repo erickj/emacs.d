@@ -17,6 +17,7 @@
 (setq *is-gte-23* (>= emacs-major-version 23))
 (setq *is-gte-24* (>= emacs-major-version 24))
 
+(mouse-wheel-mode -1)
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
