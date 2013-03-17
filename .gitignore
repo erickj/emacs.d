@@ -21,3 +21,4 @@ cookies
 site-lisp/package/
 /swank
 abbrev_defs
+session.*
