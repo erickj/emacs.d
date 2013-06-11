@@ -85,6 +85,7 @@
 ;; Additional Inits [EJ]
 (require 'init-feature-mode)
 (require 'init-px-frames)
+(require 'init-whitespace)
 
 
 ;;----------------------------------------------------------------------------
