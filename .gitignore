@@ -22,3 +22,5 @@ site-lisp/package/
 /swank
 abbrev_defs
 session.*
+semanticdb
+srecode-map.el

@@ -60,6 +60,7 @@
 (require 'init-csv)
 (require 'init-erlang)
 (require 'init-javascript)
+(require 'init-java)
 (require 'init-sh)
 (require 'init-php)
 (require 'init-org)
@@ -86,6 +87,7 @@
 (require 'init-feature-mode)
 (require 'init-px-frames)
 (require 'init-whitespace)
+(require 'init-protobuf)
 
 
 ;;----------------------------------------------------------------------------
