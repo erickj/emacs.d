@@ -18,6 +18,9 @@
 (setq *is-gte-24* (>= emacs-major-version 24))
 
 (mouse-wheel-mode -1)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
