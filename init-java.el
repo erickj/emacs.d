@@ -16,12 +16,12 @@
 ;; statements after importing via malabar or on save
 (custom-set-variables
  '(jtags-extras-import-order-list
-   '("^io.vos\\."
+   '("^static[\s]+"
+     "-"
+     "^io.vos\\."
      "-"
      "^com\\."
-     "-"
      "^org\\."
-     "-"
      "^net\\."
      "-"
      "^java\\."
