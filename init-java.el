@@ -21,13 +21,13 @@
      "^io.vos\\."
      "-"
      "^com\\."
-     "^org\\."
+     "^org\\.(?!junit)"
      "^net\\."
      "-"
      "^java\\."
      "^javax\\."
      "-"
-     "^junit\\."))
+     "^org\\.junit\\."))
  '(malabar-import-post-insert-function 'jtags-extras-organize-imports))
 
 ;; Adds the hook only in java-mode. see:
