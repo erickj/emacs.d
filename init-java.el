@@ -37,6 +37,11 @@
             (add-hook 'before-save-hook
                       'jtags-extras-organize-imports nil t)))
 
+(add-hook 'malabar-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook
+                      'malabar-compile-file-silently nil t)))
+
 (defun my-custom-java-mode-annoations-setup ()
   "Additional setup from `malabar-annotations-setup' for lining
   up statements following an annotation with the
