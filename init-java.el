@@ -30,6 +30,20 @@
      "^org\\.junit\\."))
  '(malabar-import-post-insert-function 'jtags-extras-organize-imports))
 
+;;
+;; javadoc-lookup sources
+;; @see http://nullprogram.com/blog/2013/01/30/
+;;
+(add-hook 'after-init-hook
+          (lambda ()
+            (javadoc-add-roots "/usr/share/doc/openjdk-7-jdk/api")))
+(javadoc-add-artifacts [com.google.guava guava "18.0"]
+                       [junit junit 4.12])
+
+(add-hook 'java-mode-hook
+          (lambda ()
+            (local-set-key "j" (quote javadoc-lookup))))
+
 ;; Adds the hook only in java-mode. see:
 ;; http://stackoverflow.com/questions/6138029/how-to-add-a-hook-to-only-run-in-a-particular-mode
 (add-hook 'java-mode-hook

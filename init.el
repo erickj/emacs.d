@@ -62,8 +62,8 @@
 (require 'init-markdown)
 (require 'init-csv)
 (require 'init-erlang)
-(require 'init-javascript)
 (require 'init-java)
+(require 'init-javascript)
 (require 'init-sh)
 (require 'init-php)
 (require 'init-org)
@@ -118,7 +118,6 @@
 ;; Locales (setting them earlier in this file doesn't work in X)
 ;;----------------------------------------------------------------------------
 (require 'init-locales)
-
 
 
 ;; Local Variables:
