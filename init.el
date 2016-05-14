@@ -17,6 +17,8 @@
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
+;(load-file "~/.emacs.d/site-lisp/cedet/cedet-devel-load.el")
+
 (require 'init-compat)
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
@@ -44,23 +46,23 @@
 (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-proxies)
-(require 'init-dired)
+;(require 'init-dired)
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
-(require 'init-flycheck)
+;(require 'init-flycheck)
 
 (require 'init-recentf)
 (require 'init-ido)
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-windows)
-(require 'init-sessions)
+;;(require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
 
-(require 'init-editing-utils)
+;(require 'init-editing-utils)
 
 (require 'init-vc)
 (require 'init-darcs)
@@ -73,6 +75,7 @@
 (require 'init-markdown)
 (require 'init-csv)
 (require 'init-erlang)
+(require 'init-java)
 (require 'init-javascript)
 (require 'init-php)
 (require 'init-org)
@@ -112,11 +115,16 @@
 (require-package 'regex-tool)
 
 ;;----------------------------------------------------------------------------
+;; Disable menu bar
+;;----------------------------------------------------------------------------
+(menu-bar-mode nil)
+
+;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+;; (require 'server)
+;; (unless (server-running-p)
+;;   (server-start))
 
 
 ;;----------------------------------------------------------------------------
@@ -152,3 +160,5 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
