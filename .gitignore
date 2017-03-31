@@ -37,3 +37,9 @@ site-lisp/package/
 /.sx/
 /org-clock-save.el
 recentf
+/games/
+ido.last
+/javadoc-cache/
+/semanticdb/
+session.*
+srecode-map.el
