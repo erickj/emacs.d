@@ -3,6 +3,7 @@
 ;;----------------------------------------------------------------------------
 (require-package 'mmm-mode)
 (require 'mmm-auto)
+(require 'mmm-sample)
 (setq mmm-global-mode 'buffers-with-submode-classes)
 (setq mmm-submode-decoration-level 2)
 

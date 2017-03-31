@@ -1,13 +1,24 @@
 ;;; Basic ruby setup
 (require-package 'ruby-mode)
 (require-package 'ruby-hash-syntax)
+(require-package 'rspec-mode)
 
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
                "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
-               "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'")
+               "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'"
+	       ;; my own addition
+	       "\\.loom\\'")
 
 (setq ruby-use-encoding-map nil)
+
+;; Disable deep-indenting, ruby-use-smie must be nil for this to be
+;; disabled.
+(setq ruby-use-smie nil)
+(setq ruby-deep-indent-paren nil)
+(setq ruby-deep-indent-paren-style nil)
+(setq ruby-deep-arglist nil)
+
 
 (after-load 'ruby-mode
   (define-key ruby-mode-map (kbd "TAB") 'indent-for-tab-command)
@@ -19,7 +30,16 @@
               (unless (derived-mode-p 'prog-mode)
                 (run-hooks 'prog-mode-hook)))))
 
+(defun my-setup-ruby-style ()
+  "Sets the current buffers' ruby-style. Meant to be added to the
+  `ruby-mode-hook'."
+  (interactive)
+  (setq fill-column 80)
+  )
 (add-hook 'ruby-mode-hook 'subword-mode)
+(add-hook 'ruby-mode-hook 'yard-mode)
+(add-hook 'ruby-mode-hook 'my-setup-ruby-style)
+
 
 ;; TODO: hippie-expand ignoring : for names in ruby-mode
 ;; TODO: hippie-expand adaptor for auto-complete sources
@@ -106,6 +126,45 @@
 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))
 
+(eval-after-load 'mmm-mode
+  '(progn
+     (mmm-add-classes
+      '((ruby-heredoc-ruby
+         :submode ruby-mode
+         :front "<<-?RB_?.*\r?\n"
+         :back "[ \t]*RB_?.*"
+         :face mmm-code-submode-face)))
+     (mmm-add-mode-ext-class 'ruby-mode "\\.rb$" 'ruby-heredoc-ruby)))
+
+(eval-after-load 'mmm-mode
+  '(progn
+     (mmm-add-classes
+      '((ruby-heredoc-sql
+         :submode sql-mode
+         :front "<<-?SQL_?.*\r?\n"
+         :back "[ \t]*SQL_?.*"
+         :face mmm-code-submode-face)))
+     (mmm-add-mode-ext-class 'ruby-mode "\\.rb$" 'ruby-heredoc-sql)))
+
+(eval-after-load 'mmm-mode
+  '(progn
+     (mmm-add-classes
+      '((ruby-heredoc-js
+         :submode js2-mode
+         :front "<<-?JS_?.*\r?\n"
+         :back "[ \t]*JS_?.*"
+         :face mmm-code-submode-face)))
+     (mmm-add-mode-ext-class 'ruby-mode "\\.rb$" 'ruby-heredoc-js)))
+
+(eval-after-load 'mmm-mode
+  '(progn
+     (mmm-add-classes
+      '((ruby-heredoc-shell
+         :submode shell-script-mode
+         :front "<<-?SH_?.*\r?\n"
+         :back "[ \t]*SH_?.*"
+         :face mmm-code-submode-face)))
+     (mmm-add-mode-ext-class 'ruby-mode "\\.rb$" 'ruby-heredoc-shell)))
 
 ;;----------------------------------------------------------------------------
 ;; Ruby - my convention for heredocs containing SQL
@@ -126,7 +185,7 @@
 ;;          :delimiter-mode nil)))
 ;;      (mmm-add-mode-ext-class 'ruby-mode "\\.rb\\'" 'ruby-heredoc-sql)))
 
-;(add-to-list 'mmm-set-file-name-for-modes 'ruby-mode)
+                                        ;(add-to-list 'mmm-set-file-name-for-modes 'ruby-mode)
 
 
 

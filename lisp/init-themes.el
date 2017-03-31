@@ -1,6 +1,8 @@
 (when (< emacs-major-version 24)
   (require-package 'color-theme))
 
+;; EJ - theme overriden in custom.el with with:
+;; (custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
 

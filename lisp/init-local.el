@@ -2,6 +2,9 @@
 
 (global-set-key (kbd "s-r") 'revert-buffer)
 
+(require-package 'smart-mode-line-powerline-theme)
+(sml/setup)
+
 (setq font-use-system-font t)
 
 ;;
@@ -69,27 +72,26 @@ be prompted."
 
 
 (defun modified-buffers-exist()
-    "This function will check to see if there are any buffers
+  "This function will check to see if there are any buffers
 that have been modified.  It will return true if there are
 and nil otherwise. Buffers that have buffer-offer-save set to
 nil are ignored."
-    (let (modified-found)
-      (dolist (buffer (buffer-list))
-	(when (and (buffer-live-p buffer)
-		   (buffer-modified-p buffer)
-		   (not (buffer-base-buffer buffer))
-		   (or
-		    (buffer-file-name buffer)
-		    (progn
-		      (set-buffer buffer)
-		      (and buffer-offer-save (> (buffer-size) 0))))
-		   )
-	  (setq modified-found t)
-	  )
-	)
-      modified-found
+  (let (modified-found)
+    (dolist (buffer (buffer-list))
+      (when (and (buffer-live-p buffer)
+                 (buffer-modified-p buffer)
+                 (not (buffer-base-buffer buffer))
+                 (or
+                  (buffer-file-name buffer)
+                  (progn
+                    (set-buffer buffer)
+                    (and buffer-offer-save (> (buffer-size) 0))))
+                 )
+        (setq modified-found t)
+        )
       )
+    modified-found
     )
-
+  )
 
 (provide 'init-local)

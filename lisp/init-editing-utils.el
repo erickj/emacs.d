@@ -45,7 +45,9 @@
 ;; But don't show trailing whitespace in SQLi, inf-ruby etc.
 (dolist (hook '(special-mode-hook
                 Info-mode-hook
-                eww-mode-hook
+                ;; disabled 2017-03-28, seems to open eww buffer on
+                ;; save from [HTML] mode afer inf-ruby mode is opened.
+                ;;                eww-mode-hook
                 term-mode-hook
                 comint-mode-hook
                 compilation-mode-hook
@@ -211,7 +213,7 @@
       (set (make-local-variable 'whitespace-style) '(face trailing))
       (whitespace-mode 1)))
 
-  ;;(add-hook 'prog-mode-hook 'sanityinc/prog-mode-fci-settings)
+  (add-hook 'prog-mode-hook 'sanityinc/prog-mode-fci-settings)
 
   (defun sanityinc/fci-enabled-p ()
     (and (boundp 'fci-mode) fci-mode))
