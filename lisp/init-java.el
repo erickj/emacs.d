@@ -64,17 +64,18 @@
  '(jtags-extras-import-order-list
    '("^static[\s]+"
      "-"
-     "^io.vos\\."
+     "^io.vos\."
+     "^proto\."
      "-"
-     "^com\\."
-     "^io\\."
-     "^org\\.(?!junit)"
-     "^net\\."
+     "^com\."
+     "^io\."
+     "^org\.(?!junit)"
+     "^net\."
      "-"
-     "^java\\."
-     "^javax\\."
+     "^java\."
+     "^javax\."
      "-"
-     "^org\\.junit\\."))
+     "^org\.junit\."))
  ;; '(malabar-import-post-insert-function 'jtags-extras-organize-imports)
  )
 
