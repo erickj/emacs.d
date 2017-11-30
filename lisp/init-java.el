@@ -86,6 +86,18 @@
             (add-hook 'before-save-hook
                       'jtags-extras-organize-imports nil t)))
 
+;; jtags-javadoc-root-alist : <M-f1> at point in jtags-mode
+;; Alist of package patterns vs corresponding Javadoc root URLs.
+;; Each element looks like (REGEXP . URL) where REGEXP is a regexp
+;; that matches a group of imports, and URL is the Javadoc root URL
+;; for that group of imports.  The Javadoc root URL is where the
+;; "index.html" file resides.
+;; (add-to-list 'jtags-javadoc-root-alist
+;;              '(("^io.vertx\\." . "http://vertx.io/docs/apidocs/")
+;;                ("^io.reactivex\\." . "http://reactivex.io/RxJava/2.x/javadoc/")))
+;; ((("^java\\." . "https://docs.oracle.com/javase/8/docs/api")
+;;   ("^javax\\." . "https://docs.oracle.com/javase/8/docs/api")))
+
 ;;; javadoc-lookup sources
 ;;; @see http://nullprogram.com/blog/2013/01/30/
 (require-package 'javadoc-lookup)
@@ -107,7 +119,7 @@
   annotation. Rather than indenting."
   (c-prepend-offset 'annotation-var-cont 'c-no-indent-after-java-annotations))
 
-; Use google-c-style for Java editing
+                                        ; Use google-c-style for Java editing
 (require-package 'google-c-style)
 (defun my-setup-java-style ()
   "Sets the current buffers' java-style. Meant to be added to the
@@ -116,11 +128,15 @@
   (google-make-newline-indent)
   (google-set-c-style)
   (setq fill-column 100)
-;;   (my-custom-java-mode-annoations-setup)
+  ;;   (my-custom-java-mode-annoations-setup)
   (setq tab-width 2))
+
+(defun my-java-mode-map ()
+  (define-key java-mode-map "\C-cr" 'recompile))
 
 (add-hook 'java-mode-hook 'jtags-mode)
 (add-hook 'java-mode-hook 'subword-mode)
 (add-hook 'java-mode-hook 'my-setup-java-style)
+(add-hook 'java-mode-hook 'my-java-mode-map)
 
 (provide 'init-java)

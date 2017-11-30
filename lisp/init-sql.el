@@ -39,4 +39,8 @@
 (after-load 'page-break-lines
   (push 'sql-mode page-break-lines-modes))
 
+
+(add-auto-mode 'sql-mode
+               "\\.cql")
+
 (provide 'init-sql)

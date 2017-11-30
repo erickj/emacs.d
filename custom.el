@@ -22,9 +22,19 @@
  '(fci-rule-use-dashes nil)
  '(fringe-mode nil nil (fringe))
  '(global-whitespace-cleanup-mode t)
+ '(jtags-etags-command
+   "/home/workspace/src/io.vos/gentags.sh /home/workspace/src/io.vos")
  '(jtags-extras-import-order-list
    (quote
-    ("^static[ ]+" "-" "^io.vos\\." "-" "^com\\." "^org\\.(?!junit)" "^net\\." "-" "^java\\." "^javax\\." "-" "^org\\.junit\\.")))
+    ("^static[ ]+" "-" "^io.vos." "^proto." "-" "^com." "^io." "^org.(?!junit)" "^net." "-" "^java." "^javax." "-" "^org.junit.")))
+ '(jtags-javadoc-root-alist
+   (quote
+    (("^java\\." . "https://docs.oracle.com/javase/8/docs/api")
+     ("^javax\\." . "https://docs.oracle.com/javase/8/docs/api")
+     ("^io.vertx\\." . "http://vertx.io/docs/apidocs")
+     ("^io.reactivex\\." . "http://reactivex.io/RxJava/2.x/javadoc/")
+     ("^org.reactivestreams\\." . "http://www.reactive-streams.org/reactive-streams-1.0.0-javadoc/")
+     ("^com.google.protobuf\\." . "https://developers.google.com/protocol-buffers/docs/reference/java/"))))
  '(malabar-import-post-insert-function (quote jtags-extras-organize-imports))
  '(package-selected-packages
    (quote
@@ -48,6 +58,9 @@
  '(sml/theme (quote dark))
  '(switch-window-shortcut-style (quote alphabet))
  '(switch-window-threshold 3)
+ '(tags-table-list
+   (quote
+    ("/usr/local/src/java/TAGS" "/home/erick/workspace/src/io.vos/TAGS")))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
