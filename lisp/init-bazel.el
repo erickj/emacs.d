@@ -1,3 +1,4 @@
-(add-to-list 'auto-mode-alist '("\\BUILD\\'" . python-mode))
+(add-auto-mode 'python-mode
+               "BUILD\\'" "WORKSPACE\\'" "\\.bzl\\'")
 
 (provide 'init-bazel)
