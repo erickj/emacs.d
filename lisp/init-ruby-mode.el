@@ -34,7 +34,7 @@
   "Sets the current buffers' ruby-style. Meant to be added to the
   `ruby-mode-hook'."
   (interactive)
-  (setq fill-column 80)
+  (setq fill-column 100)
   )
 (add-hook 'ruby-mode-hook 'subword-mode)
 (add-hook 'ruby-mode-hook 'yard-mode)

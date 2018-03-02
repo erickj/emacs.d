@@ -58,7 +58,7 @@
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
-;(require 'init-flycheck)
+(require 'init-flycheck)
 
 (require 'init-recentf)
 (require 'init-ido)
@@ -91,6 +91,7 @@
 (require 'init-html)
 (require 'init-css)
 (require 'init-haml)
+(require 'init-protobuf)
 (require 'init-python-mode)
 (require 'init-haskell)
 (require 'init-ruby-mode)
