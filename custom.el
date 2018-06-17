@@ -3,20 +3,30 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#515151" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#cccccc"))
+ '(beacon-color "#f2777a")
  '(browse-url-browser-function (quote eww-browse-url))
  '(browse-url-firefox-program "firefox")
  '(browse-url-firefox-startup-arguments nil)
  '(c-offsets-alist (quote ((arglist-cont-nonempty . +))))
  '(clang-format-executable "/opt/llvm-5.0.1/bin/clang-format")
- '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
+ '(custom-enabled-themes
+   (quote
+    (smart-mode-line-dark sanityinc-tomorrow-eighties)))
  '(custom-safe-themes
    (quote
-    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+    ("43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(desktop-auto-save-timeout 600)
  '(desktop-buffers-not-to-save "^(\\`|*)")
  '(desktop-save-mode nil)
  '(fci-dash-pattern 0.65)
+ '(fci-rule-color "#515151")
  '(fci-rule-use-dashes nil)
+ '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
+ '(frame-background-mode (quote dark))
  '(fringe-mode nil nil (fringe))
  '(global-whitespace-cleanup-mode t)
  '(jtags-etags-command
@@ -36,7 +46,7 @@
  '(markdown-command "markdown")
  '(package-selected-packages
    (quote
-    (clang-format flycheck typescript-mode rspec-mode smart-mode-line-powerline-theme smart-mode-line yard-mode yari yaml-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep vc-darcs unfill undo-tree tidy textile-mode tagedit switch-window sql-indent smex smarty-mode skewer-less session scss-mode scratch sass-mode ruby-hash-syntax robe rinari regex-tool redshank rainbow-mode rainbow-delimiters project-local-variables pip-requirements php-mode paredit-everywhere page-break-lines org-pomodoro org-fstree mwe-log-commands multiple-cursors move-dup mmm-mode markdown-mode malabar-mode magit-svn magit-gh-pulls macrostep lua-mode lively less-css-mode ledger-mode jtags json-mode js-comint javadoc-lookup ipretty idomenu ido-ubiquitous ibuffer-vc htmlize hl-sexp hippie-expand-slime highlight-symbol highlight-quoted highlight-escape-sequences hi2 hayoo guide-key google-c-style gnuplot gitignore-mode github-clone github-browse-file gitconfig-mode git-timemachine git-messenger git-blame ghci-completion fullframe flycheck-protobuf flycheck-package flycheck-ledger flycheck-hdevtools flycheck-haskell flycheck-clojure fill-column-indicator expand-region exec-path-from-shell erlang elisp-slime-nav elein dsvn dired-sort dired+ diminish diff-hl default-text-scale darcsum csv-nav csv-mode css-eldoc crontab-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cljsbuild-mode cl-lib-highlight bug-reference-github browse-kill-ring auto-compile anzu aggressive-indent ace-jump-mode ac-slime ac-js2 ac-inf-ruby ac-haskell-process ac-cider)))
+    (dired-sidebar leuven-theme javadoc-import clang-format flycheck typescript-mode rspec-mode smart-mode-line-powerline-theme smart-mode-line yard-mode yari yaml-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep vc-darcs unfill undo-tree tidy textile-mode tagedit switch-window sql-indent smex smarty-mode skewer-less session scss-mode scratch sass-mode ruby-hash-syntax robe rinari regex-tool redshank rainbow-mode rainbow-delimiters project-local-variables pip-requirements php-mode paredit-everywhere page-break-lines org-pomodoro org-fstree mwe-log-commands multiple-cursors move-dup mmm-mode markdown-mode malabar-mode magit-svn magit-gh-pulls macrostep lua-mode lively less-css-mode ledger-mode jtags json-mode js-comint javadoc-lookup ipretty idomenu ido-ubiquitous ibuffer-vc htmlize hl-sexp hippie-expand-slime highlight-symbol highlight-quoted highlight-escape-sequences hi2 hayoo guide-key google-c-style gnuplot gitignore-mode github-clone github-browse-file gitconfig-mode git-timemachine git-messenger git-blame ghci-completion fullframe flycheck-protobuf flycheck-package flycheck-ledger flycheck-hdevtools flycheck-haskell flycheck-clojure fill-column-indicator expand-region exec-path-from-shell erlang elisp-slime-nav elein dsvn dired-sort dired+ diminish diff-hl default-text-scale darcsum csv-nav csv-mode css-eldoc crontab-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cljsbuild-mode cl-lib-highlight bug-reference-github browse-kill-ring auto-compile anzu aggressive-indent ace-jump-mode ac-slime ac-js2 ac-inf-ruby ac-haskell-process ac-cider)))
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(ruby-deep-indent-paren-style nil)
