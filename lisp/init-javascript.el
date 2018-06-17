@@ -41,6 +41,8 @@
    js2-basic-offset preferred-javascript-indent-level
    js2-bounce-indent-p nil)
 
+  (setq fill-column 80)
+
   (after-load 'js2-mode
     (js2-imenu-extras-setup)))
 

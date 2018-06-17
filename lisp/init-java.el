@@ -94,11 +94,12 @@
  )
 
 (require-package 'javadoc-lookup)
+(require 'javadoc-import)
 
 ;; Adds the hook only in java-mode. see:
 ;; http://stackoverflow.com/questions/6138029/how-to-add-a-hook-to-only-run-in-a-particular-mode
 
-;; aliases defun `java-import/sort-java-imports' from
+;; aliases defun `javadoc-import/javadoc-sort-imports' from
 ;; javadoc-lookup package to
 ;; `jtags-extras-organize-imports'. I'm using javadoc-lookup
 ;; for locating import artifacts, but jtags custom sort
@@ -106,7 +107,7 @@
 ;; java-import/add-java-import it automatically calls
 ;; sort-java-imports. Using the import ordering from only
 ;; jtags keeps imports in the correct order.
-(defalias 'sort-java-imports 'jtags-extras-organize-imports)
+(defalias 'javadoc-sort-imports 'jtags-extras-organize-imports)
 (add-hook 'java-mode-hook
           (lambda ()
             ;; Sort imports before save
@@ -139,7 +140,7 @@
 (add-hook 'java-mode-hook
           (lambda ()
             (local-set-key "j" (quote javadoc-lookup))
-            (local-set-key (kbd "C-c C-i") (quote add-java-import))))
+            (local-set-key (kbd "C-c C-i") (quote javadoc-add-import))))
 
 ;;; Fix indenting after wrapping after an annotation
 (defun my-custom-java-mode-annoations-setup ()
