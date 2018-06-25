@@ -122,7 +122,9 @@
      (python . t)
      (ruby . t)
      (screen . nil)
-     (sh . t)
+     ;; EJ: 2018-06-26, Disabled to prevent error:
+     ;; File mode specification error: "ob-sh"
+     ;; (sh . t)
      (sql . nil)
      (sqlite . t))))
 
