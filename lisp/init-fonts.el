@@ -11,8 +11,8 @@
 
 (add-hook 'after-init-hook 'sanityinc/maybe-use-default-font-for-symbols)
 
-(add-to-list 'default-frame-alist
-             '(font . "Inconsolata:pixelsize=22:foundry=PfEd:weight=normal:slant=normal:width=normal:spacing=100:scalable=true" ))
+;(add-to-list 'default-frame-alist
+;             '(font . "Inconsolata:pixelsize=22:foundry=PfEd:weight=normal:slant=normal:width=normal:spacing=100:scalable=true" ))
 
 
 ;;; Changing font sizes

@@ -20,6 +20,10 @@
                             (loop for entry in auto-mode-alist
                                   unless (eq preferred-javascript-mode (cdr entry))
                                   collect entry)))
+;; EJ: 2018-06-29... for the life of me I can not parse lisp.
+;; I have no idea how to extend that extension list inside the cons.
+;; ... :(
+(add-auto-mode preferred-javascript-mode "\\.jsm\\'")
 
 
 ;; js2-mode
