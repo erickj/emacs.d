@@ -60,7 +60,6 @@
      (ruby-compilation-executable . "ruby1.9")
      (ruby-compilation-executable . "rbx")
      (ruby-compilation-executable . "jruby"))))
- '(session-use-package t nil (session))
  '(show-trailing-whitespace t)
  '(shr-use-fonts nil)
  '(sml/theme (quote dark))

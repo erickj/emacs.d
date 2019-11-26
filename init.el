@@ -9,6 +9,8 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (let ((minver "23.3"))
   (when (version<= emacs-version "23.1")
     (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
@@ -25,6 +27,9 @@
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
 ;(load-file "~/.emacs.d/site-lisp/cedet/cedet-devel-load.el")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
+;;(load-file "~/.emacs.d/site-lisp/mmm-mode/mmm-mode.el")
+;;(load-file "~/.emacs.d/site-lisp/tidy.el")
 
 (require 'init-compat)
 (require 'init-utils)
@@ -42,10 +47,10 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'wgrep)
-(require-package 'project-local-variables)
+;(require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
-(require-package 'mwe-log-commands)
+;(require-package 'mwe-log-commands)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -86,7 +91,7 @@
 (require 'init-java)
 (require 'init-javascript)
 (require 'init-php)
-(require 'init-org)
+;(require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
 (require 'init-css)
@@ -99,7 +104,7 @@
 (require 'init-sql)
 
 (require 'init-paredit)
-(require 'init-lisp)
+;(require 'init-lisp)
 (require 'init-slime)
 (require 'init-clojure)
 (when (>= emacs-major-version 24)

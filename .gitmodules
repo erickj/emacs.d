@@ -1,0 +1,3 @@
+[submodule "site-lisp/mmm-mode"]
+	path = site-lisp/mmm-mode
+	url = https://github.com/purcell/mmm-mode.git
