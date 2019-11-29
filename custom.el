@@ -13,11 +13,11 @@
  '(browse-url-firefox-program "firefox")
  '(browse-url-firefox-startup-arguments nil)
  '(c-offsets-alist (quote ((arglist-cont-nonempty . +))))
- '(clang-format-executable "/opt/llvm-5.0.1/bin/clang-format")
- '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
+ '(clang-format-style "Google")
+ '(custom-enabled-themes (quote (darcula)))
  '(custom-safe-themes
    (quote
-    ("43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "41c8c11f649ba2832347fe16fe85cf66dafe5213ff4d659182e25378f9cfc183" "b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(desktop-auto-save-timeout 600)
  '(desktop-buffers-not-to-save "^(\\`|*)")
  '(desktop-save-mode nil)
@@ -45,7 +45,7 @@
  '(markdown-command "markdown")
  '(package-selected-packages
    (quote
-    (arduino-mode org dired-sidebar leuven-theme javadoc-import clang-format flycheck typescript-mode rspec-mode smart-mode-line-powerline-theme smart-mode-line yard-mode yari yaml-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep vc-darcs unfill undo-tree tidy textile-mode tagedit switch-window sql-indent smex smarty-mode skewer-less session scss-mode scratch sass-mode ruby-hash-syntax robe rinari regex-tool redshank rainbow-mode rainbow-delimiters project-local-variables pip-requirements php-mode paredit-everywhere page-break-lines org-pomodoro org-fstree mwe-log-commands multiple-cursors move-dup mmm-mode markdown-mode malabar-mode magit-svn magit-gh-pulls macrostep lua-mode lively less-css-mode ledger-mode jtags json-mode js-comint javadoc-lookup ipretty idomenu ido-ubiquitous ibuffer-vc htmlize hl-sexp hippie-expand-slime highlight-symbol highlight-quoted highlight-escape-sequences hi2 hayoo guide-key google-c-style gnuplot gitignore-mode github-clone github-browse-file gitconfig-mode git-timemachine git-messenger git-blame ghci-completion fullframe flycheck-protobuf flycheck-package flycheck-ledger flycheck-hdevtools flycheck-haskell flycheck-clojure fill-column-indicator expand-region exec-path-from-shell erlang elisp-slime-nav elein dsvn dired-sort dired+ diminish diff-hl default-text-scale darcsum csv-nav csv-mode css-eldoc crontab-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cljsbuild-mode cl-lib-highlight bug-reference-github browse-kill-ring auto-compile anzu aggressive-indent ace-jump-mode ac-slime ac-js2 ac-inf-ruby ac-haskell-process ac-cider)))
+    (darcula-theme arduino-mode org dired-sidebar leuven-theme javadoc-import clang-format flycheck typescript-mode rspec-mode smart-mode-line-powerline-theme smart-mode-line yard-mode yari yaml-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep vc-darcs unfill undo-tree tidy textile-mode tagedit switch-window sql-indent smex smarty-mode skewer-less session scss-mode scratch sass-mode ruby-hash-syntax robe rinari regex-tool redshank rainbow-mode rainbow-delimiters project-local-variables pip-requirements php-mode paredit-everywhere page-break-lines org-pomodoro org-fstree mwe-log-commands multiple-cursors move-dup mmm-mode markdown-mode malabar-mode magit-svn magit-gh-pulls macrostep lua-mode lively less-css-mode ledger-mode jtags json-mode js-comint javadoc-lookup ipretty idomenu ido-ubiquitous ibuffer-vc htmlize hl-sexp hippie-expand-slime highlight-symbol highlight-quoted highlight-escape-sequences hi2 hayoo guide-key google-c-style gnuplot gitignore-mode github-clone github-browse-file gitconfig-mode git-timemachine git-messenger git-blame ghci-completion fullframe flycheck-protobuf flycheck-package flycheck-ledger flycheck-hdevtools flycheck-haskell flycheck-clojure fill-column-indicator expand-region exec-path-from-shell erlang elisp-slime-nav elein dsvn dired-sort dired+ diminish diff-hl default-text-scale darcsum csv-nav csv-mode css-eldoc crontab-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cljsbuild-mode cl-lib-highlight bug-reference-github browse-kill-ring auto-compile anzu aggressive-indent ace-jump-mode ac-slime ac-js2 ac-inf-ruby ac-haskell-process ac-cider)))
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(ruby-deep-indent-paren-style nil)
@@ -62,7 +62,74 @@
      (ruby-compilation-executable . "jruby"))))
  '(show-trailing-whitespace t)
  '(shr-use-fonts nil)
- '(sml/theme (quote dark))
+ '(sml/mode-width
+   (if
+       (eq
+        (powerline-current-separator)
+        (quote arrow))
+       (quote right)
+     (quote full)))
+ '(sml/pos-id-separator
+   (quote
+    (""
+     (:propertize " " face powerline-active1)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (car powerline-default-separator-dir)))
+                   (quote powerline-active1)
+                   (quote powerline-active2))))
+     (:propertize " " face powerline-active2))))
+ '(sml/pos-minor-modes-separator
+   (quote
+    (""
+     (:propertize " " face powerline-active1)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (cdr powerline-default-separator-dir)))
+                   (quote powerline-active1)
+                   (quote sml/global))))
+     (:propertize " " face sml/global))))
+ '(sml/pre-id-separator
+   (quote
+    (""
+     (:propertize " " face sml/global)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (car powerline-default-separator-dir)))
+                   (quote sml/global)
+                   (quote powerline-active1))))
+     (:propertize " " face powerline-active1))))
+ '(sml/pre-minor-modes-separator
+   (quote
+    (""
+     (:propertize " " face powerline-active2)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (cdr powerline-default-separator-dir)))
+                   (quote powerline-active2)
+                   (quote powerline-active1))))
+     (:propertize " " face powerline-active1))))
+ '(sml/pre-modes-separator (propertize " " (quote face) (quote sml/modes)))
  '(switch-window-shortcut-style (quote alphabet))
  '(switch-window-threshold 3)
  '(tags-table-list
@@ -90,6 +157,7 @@
      (340 . "#ffcc66")
      (360 . "#99cc99"))))
  '(vc-annotate-very-old-color nil)
+ '(window-divider-mode nil)
  '(window-system-color-theme (quote color-theme-sanityinc-eighties)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

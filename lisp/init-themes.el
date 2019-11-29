@@ -5,6 +5,16 @@
 ;; (custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'darcula-theme)
+
+;; ----------------------------------------------------------------------------
+;; Powerline
+;; ----------------------------------------------------------------------------
+
+;(require-package 'smart-mode-line-powerline-theme)
+;(sml/setup)
+(require-package 'powerline)
+(powerline-default-theme)
 
 ;;------------------------------------------------------------------------------
 ;; Old-style color theming support (via color-theme.el)

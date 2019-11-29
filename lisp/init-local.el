@@ -2,9 +2,6 @@
 
 (global-set-key (kbd "s-r") 'revert-buffer)
 
-(require-package 'smart-mode-line-powerline-theme)
-(sml/setup)
-
 (setq font-use-system-font t)
 
 ;;
